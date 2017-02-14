@@ -1,0 +1,19 @@
+<li class="nav-item <%= "active open" if ["erp/inventory/backend/delivering"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-industry"></i>
+        <span class="title"><%= t('.inventory') %></span>
+        <% if ["erp/inventory/backend/delivering"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item">
+            <a href="<%= erp_inventory.backend_delivering_path %>" class="nav-link">
+                <span class="title"><%= t('.delivering') %></span>
+            </a>
+        </li>
+    </ul>
+</li>
