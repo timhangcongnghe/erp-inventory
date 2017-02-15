@@ -8,7 +8,7 @@ module Erp
         end
         
         def order_listing
-          @orders = Erp::Sales::Order.search(params).paginate(:page => params[:page], :per_page => 3)
+          @orders = Erp::Orders::Order.search(params).paginate(:page => params[:page], :per_page => 3)
           
           render layout: nil
         end

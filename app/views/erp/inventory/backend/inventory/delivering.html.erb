@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :page_title do %>
-    <i class="fa fa-industry"></i> <%= t('.delivering') %>
+    <i class="fa fa-th"></i> <%= t('.delivering') %>
 <% end %>
 
 <% content_for :page_toolbar do %>
@@ -18,16 +18,28 @@
     ],
     columns: [
         {
-            text: t('.name'), name: 'name', value: true, checked: true
+            text: t('.order_number'), name: 'order_number', value: true, checked: true
         },
         {
-            text: t('status'), name: 'status', value: true, checked: true
+            text: t('.order_date'), name: 'order_date', value: true, checked: true
         },
         {
-            text: t('creator'), name: 'creator', value: true, checked: true
+            text: t('.customer'), name: 'customer', value: true, checked: true
         },
         {
-            text: t('created_at'), name: 'created_at', value: true, checked: true
+            text: t('.salesperson'), name: 'salesperson', value: true, checked: true
+        },
+        {
+            text: t('.total'), name: 'total', value: true, checked: true
+        },
+        {
+            text: t('.status'), name: 'status', value: true, checked: false
+        },
+        {
+            text: t('.creator'), name: 'creator', value: true, checked: false
+        },
+        {
+            text: t('.created_at'), name: 'created_at', value: true, checked: false
         }
     ]
 ) %>
