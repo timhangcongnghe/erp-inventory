@@ -44,7 +44,7 @@
                     <%= erp_datalist_check_row(id: order.id) %>
                 </td>
                 <% if get_columns(params).include?("order_code") %>
-                <td><%= "#" + order.code %></td>
+                <td><strong><%= "#" + order.code %></strong></td>
                 <% end %>
                 <% if get_columns(params).include?("customer") %>
                 <td><%= order.customer_name %></td>
@@ -58,13 +58,13 @@
                 <% if get_columns(params).include?("order_status") %>
                 <td>
                     <% if order.remain_order_quantity > 0 %>
-                    <span class="label label-sm label-danger"><%= t('.pending') %></span>
+                    <span class="label bg-green-steel"><%= t('.pending') %></span>
                     <% end %>
                     <% if order.remain_order_quantity == 0 %>
-                    <span class="label label-sm label-info"><%= t('.delivered') %></span>
+                    <span class="label bg-blue"><%= t('.delivered') %></span>
                     <% end %>
                     <% if order.remain_order_quantity < 0 %>
-                    <span class="label label-sm label-warning">Lỗi số lượng giao = <%= order.remain_order_quantity %></span>
+                    <span class="label bg-red-thunderbird">Lỗi số lượng giao = <%= order.remain_order_quantity %></span>
                     <% end %>
                 </td>
                 <% end %>
@@ -113,7 +113,7 @@
                         <tbody>
                             <% order.order_details.each do |order_detail| %>
                             <tr>
-                                <td>#<%= order_detail.product.code %></td>
+                                <td><strong>#<%= order_detail.product.code %></strong></td>
                                 <td><%= order_detail.product.name %></td>
                                 <td class="numeric"><%= format_number(order_detail.product.price) %> VNĐ</td>
                                 <td class="numeric"><%= format_number(order_detail.quantity) %></td>
