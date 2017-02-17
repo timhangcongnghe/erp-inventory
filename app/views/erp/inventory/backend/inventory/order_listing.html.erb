@@ -4,9 +4,9 @@
             <th width='1%'>
                 <%= erp_datalist_check_all %>
             </th>
-            <% if get_columns(params).include?("order_number") %>
+            <% if get_columns(params).include?("order_code") %>
                 <th class="sortable" sort-by='erp_sales_orders.id'>
-                    <%= t('.order_number') %>
+                    <%= t('.order_code') %>
                 </th>
             <% end %>
             <% if get_columns(params).include?("customer") %>
@@ -43,8 +43,8 @@
                 <td>
                     <%= erp_datalist_check_row(id: order.id) %>
                 </td>
-                <% if get_columns(params).include?("order_number") %>
-                <td><%= "# " + order.id.to_s %></td>
+                <% if get_columns(params).include?("order_code") %>
+                <td><%= "#" + order.code %></td>
                 <% end %>
                 <% if get_columns(params).include?("customer") %>
                 <td><%= order.customer_name %></td>
@@ -57,11 +57,15 @@
                 <% end %>
                 <% if get_columns(params).include?("order_status") %>
                 <td>
+                    <% if order.remain_order_quantity > 0 %>
                     <span class="label label-sm label-danger"><%= t('.pending') %></span>
-                    <!--<span class="label label-sm label-warning"><%= t('.packed') %></span>
-                    <span class="label label-sm label-success"><%= t('.delivering') %></span>-->
+                    <% end %>
+                    <% if order.remain_order_quantity == 0 %>
                     <span class="label label-sm label-info"><%= t('.delivered') %></span>
-                    <!--<span class="label label-sm label-default"><%= t('.cancel') %></span>-->
+                    <% end %>
+                    <% if order.remain_order_quantity < 0 %>
+                    <span class="label label-sm label-warning">Lỗi số lượng giao = <%= order.remain_order_quantity %></span>
+                    <% end %>
                 </td>
                 <% end %>
                 <% if get_columns(params).include?("creator") %>
@@ -86,18 +90,6 @@
                                 href: ''
                             },
                             {
-                                text: '<i class="fa fa-cubes"></i> '+t('.action_packed'),
-                                href: ''
-                            },
-                            {
-                                text: '<i class="fa fa-send"></i> '+t('.action_delivering'),
-                                href: ''
-                            },
-                            {
-                                text: '<i class="fa fa-check"></i> '+t('.action_delivered'),
-                                href: ''
-                            },
-                            {
                                 text: '<i class="fa fa-close"></i> '+t('.action_cancel'),
                                 href: ''
                             }
@@ -106,7 +98,7 @@
                 </td>
             </tr>
             <tr class="child-table">
-                <td colspan="6">
+                <td colspan="7">
                     <table class="table table-bordered table-striped table-condensed flip-content">
                         <thead class="flip-content">
                             <tr>
@@ -135,7 +127,7 @@
             </tr>
         <% end.empty? %>
             <tr>
-                <td colspan="6"><%= t('.no_matching_records_found') %></td>
+                <td colspan="7"><%= t('.no_matching_records_found') %></td>
             </tr>
         <% end %>
     </tbody>
