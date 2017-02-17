@@ -9,11 +9,6 @@
                     <%= t('.order_number') %>
                 </th>
             <% end %>
-            <% if get_columns(params).include?("order_date") %>
-                <th>
-                    <%= t('.order_date') %>
-                </th>
-            <% end %>
             <% if get_columns(params).include?("customer") %>
                 <th>
                     <%= t('.customer') %>
@@ -24,27 +19,22 @@
                     <%= t('.salesperson') %>
                 </th>
             <% end %>
-            <% if get_columns(params).include?("total") %>
+            <% if get_columns(params).include?("order_date") %>
                 <th>
-                    <%= t('.total') %>
+                    <%= t('.order_date') %>
                 </th>
             <% end %>
-            <% if get_columns(params).include?("status") %>
+            <% if get_columns(params).include?("order_status") %>
                 <th>
-                    <%= t('.status') %>
-                </th>
-            <% end %>
-            <% if get_columns(params).include?("creator") %>
-                <th>
-                    <%= t('.creator') %>
+                    <%= t('.order_status') %>
                 </th>
             <% end %>
             <% if get_columns(params).include?("created_at") %>
                 <th class="sortable" sort-by='erp_sales_orders.created_at'>
-                    <%= t('.created_at') %>
+                    <%= t('created_at') %>
                 </th>
             <% end %>
-            <th width="7%"><%= t('.actions') %></th>
+            <th width="7%"><%= t('actions') %></th>
         </tr>
     </thead>
     <tbody>
@@ -56,20 +46,23 @@
                 <% if get_columns(params).include?("order_number") %>
                 <td><%= "# " + order.id.to_s %></td>
                 <% end %>
-                <% if get_columns(params).include?("order_date") %>
-                <td><%= order.order_date.strftime("%d/%m/%Y") %></td>
-                <% end %>
                 <% if get_columns(params).include?("customer") %>
                 <td><%= order.customer_name %></td>
                 <% end %>
                 <% if get_columns(params).include?("salesperson") %>
                 <td><%= order.salesperson_name %></td>
                 <% end %>
-                <% if get_columns(params).include?("total") %>
-                <td><%= order.total %></td>
+                <% if get_columns(params).include?("order_date") %>
+                <td><%= order.order_date.strftime("%d/%m/%Y") %></td>
                 <% end %>
-                <% if get_columns(params).include?("status") %>
-                <td></td>
+                <% if get_columns(params).include?("order_status") %>
+                <td>
+                    <span class="label label-sm label-danger"><%= t('.pending') %></span>
+                    <!--<span class="label label-sm label-warning"><%= t('.packed') %></span>
+                    <span class="label label-sm label-success"><%= t('.delivering') %></span>-->
+                    <span class="label label-sm label-info"><%= t('.delivered') %></span>
+                    <!--<span class="label label-sm label-default"><%= t('.cancel') %></span>-->
+                </td>
                 <% end %>
                 <% if get_columns(params).include?("creator") %>
                 <td>
@@ -85,15 +78,59 @@
                     <%= erp_datalist_row_actions(
                         [
                             {
-                                text: '<span class="glyphicon glyphicon-import"> </span> '+t('.import'),
+                                text: '<i class="fa fa-level-down"></i> '+t('.action_import'),
                                 href: ''
                             },
                             {
-                                text: '<span class="glyphicon glyphicon-export"> </span> '+t('.export'),
+                                text: '<i class="fa fa-level-up"></i> '+t('.action_export'),
+                                href: ''
+                            },
+                            {
+                                text: '<i class="fa fa-cubes"></i> '+t('.action_packed'),
+                                href: ''
+                            },
+                            {
+                                text: '<i class="fa fa-send"></i> '+t('.action_delivering'),
+                                href: ''
+                            },
+                            {
+                                text: '<i class="fa fa-check"></i> '+t('.action_delivered'),
+                                href: ''
+                            },
+                            {
+                                text: '<i class="fa fa-close"></i> '+t('.action_cancel'),
                                 href: ''
                             }
                         ]
                     ) %>
+                </td>
+            </tr>
+            <tr class="child-table">
+                <td colspan="6">
+                    <table class="table table-bordered table-striped table-condensed flip-content">
+                        <thead class="flip-content">
+                            <tr>
+                                <th width="20%">Mã sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th class="numeric">Giá</th>
+                                <th class="numeric">Số lượng đặt hàng</th>
+                                <th class="numeric">Số lượng đã giao</th>
+                                <th class="numeric">Số lượng chưa giao</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% order.order_details.each do |order_detail| %>
+                            <tr>
+                                <td>#<%= order_detail.product.code %></td>
+                                <td><%= order_detail.product.name %></td>
+                                <td class="numeric"><%= format_number(order_detail.product.price) %> VNĐ</td>
+                                <td class="numeric"><%= format_number(order_detail.quantity) %></td>
+                                <td class="numeric"><%= format_number(order_detail.delivered_amount) %></td>
+                                <td class="numeric"><%= format_number(order_detail.remain_quantity) %></td>
+                            </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
                 </td>
             </tr>
         <% end.empty? %>

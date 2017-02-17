@@ -13,15 +13,53 @@
     url: erp_inventory.backend_order_listing_path,
     keywords: [
         {
-            text: t('.name'), name: ''
+            text: t('.order_code'), name: ''
         },
+        {
+            text: t('.customer'), name: ''
+        },
+        {
+            text: t('.salesperson'), name: ''
+        },
+        {
+            text: t('.delivery_code'), name: ''
+        },
+        {
+            text: t('creator'), name: ''
+        }
+    ],
+    filters: [
+        {
+            text: t('.import'), name: 'import', value: true, checked: false
+        },
+        {
+            text: t('.export'), name: 'export', value: true, checked: false
+        },
+        {
+            divider: true
+        },
+        {
+            text: t('.pending'), name: 'pending', value: true, checked: false
+        },
+        {
+            text: t('.packed'), name: 'packed', value: true, checked: false
+        },
+        {
+            text: t('.delivering'), name: 'delivering', value: true, checked: false
+        },
+        {
+            text: t('.delivered'), name: 'delivered', value: true, checked: false
+        },
+        {
+            divider: true
+        },
+        {
+            text: t('.cancel'), name: 'cancel', value: true, checked: false
+        }
     ],
     columns: [
         {
-            text: t('.order_number'), name: 'order_number', value: true, checked: true
-        },
-        {
-            text: t('.order_date'), name: 'order_date', value: true, checked: true
+            text: t('.order_code'), name: 'order_code', value: true, checked: true
         },
         {
             text: t('.customer'), name: 'customer', value: true, checked: true
@@ -30,16 +68,13 @@
             text: t('.salesperson'), name: 'salesperson', value: true, checked: true
         },
         {
-            text: t('.total'), name: 'total', value: true, checked: true
+            text: t('.order_date'), name: 'order_date', value: true, checked: true
         },
         {
-            text: t('.status'), name: 'status', value: true, checked: false
+            text: t('.order_status'), name: 'order_status', value: true, checked: true
         },
         {
-            text: t('.creator'), name: 'creator', value: true, checked: false
-        },
-        {
-            text: t('.created_at'), name: 'created_at', value: true, checked: false
+            text: t('created_at'), name: 'created_at', value: true, checked: false
         }
     ]
 ) %>

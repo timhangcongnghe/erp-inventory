@@ -1,0 +1,44 @@
+vi:
+  layouts:
+    erp:
+      backend:
+        sidebar:
+          storage: "Kho"
+          delivering: "Đơn hàng"
+  erp:
+    inventory: 
+      backend:
+        inventory:
+          delivering:
+            delivering: "Đơn hàng"
+            order_code: "Mã đơn hàng"
+            customer: "Khách hàng"
+            salesperson: "Người bán hàng"
+            delivery_code: "Mã giao hàng"
+            import: "Đơn hàng nhập"
+            export: "Đơn hàng xuất"
+            pending: "Đơn hàng đang đợi giao"
+            packed: "Đơn hàng đang đóng gói"
+            delivering: "Đơn hàng đang giao"
+            delivered: "Đơn hàng đã giao"
+            cancel: "Đơn hàng đã hủy"
+            order_date: "Ngày đặt hàng"
+            order_status: "Trạng thái"
+          order_listing:
+            customer: "Khách hàng"
+            salesperson: "Người bán hàng"
+            order_date: "Ngày đặt hàng"
+            order_status: "Trạng thái"
+            pending: "Đơn hàng đang đợi giao"
+            packed: "Đơn hàng đang đóng gói"
+            delivering: "Đơn hàng đang giao"
+            delivered: "Đơn hàng đã giao"
+            cancel: "Đơn hàng đã hủy"
+            action_import: "Nhập hàng"
+            action_export: "Xuất hàng"
+            action_packed: "Xác nhận đóng gói"
+            action_delivering: "Xác nhận đang giao"
+            action_delivered: "Xác nhận đã giao"
+            action_cancel: "Hủy đơn hàng"
+            
+            
