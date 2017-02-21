@@ -1,0 +1,24 @@
+<table class="table table-bordered table-striped flip-content">
+    <thead class="flip-content">
+        <tr>
+            <th width="20%" class="text-left">Mã sản phẩm</th>
+            <th class="numeric">Tên sản phẩm</th>
+            <th class="numeric text-right">Giá</th>
+            <th class="numeric">Số lượng đặt hàng</th>
+            <th class="numeric">Số lượng đã giao</th>
+            <th class="numeric">Số lượng chưa giao</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @order.order_details.each do |order_detail| %>
+        <tr>
+            <td class="text-left"><strong>#<%= order_detail.product.code %></strong></td>
+            <td class="text-left"><%= order_detail.product.name %></td>
+            <td class="numeric text-right"><%= format_number(order_detail.product.price) %> VNĐ</td>
+            <td class="numeric"><%= format_number(order_detail.quantity) %></td>
+            <td class="numeric"><%= format_number(order_detail.delivered_amount) %></td>
+            <td class="numeric"><%= format_number(order_detail.remain_quantity) %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
