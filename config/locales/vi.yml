@@ -5,6 +5,8 @@ vi:
         sidebar:
           storage: "Kho"
           delivering: "Đơn hàng"
+          damage_records: "Xuất hủy"
+          stock_checks: "Kiểm kho"
   erp:
     inventory: 
       backend:
