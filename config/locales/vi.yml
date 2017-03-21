@@ -8,6 +8,7 @@ vi:
           damage_records: "Xuất hủy"
           stock_checks: "Kiểm kho"
           brands: "Thương hiệu"
+          brand_groups: "Nhóm thương hiệu"
   erp:
     inventory: 
       backend:
