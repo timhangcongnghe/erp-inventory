@@ -1,8 +1,8 @@
-<li class="nav-item <%= "active open" if ["erp/inventory/backend/delivering","erp/deliveries/backend/deliveries","erp/products/backend/products","erp/products/backend/categories","erp/products/backend/damage_records","erp/products/backend/stock_checks","erp/products/backend/brands","erp/products/backend/brand_groups"].include?(params[:controller]) %>">
+<li class="nav-item <%= "active open" if ["erp/inventory/backend/delivering","erp/deliveries/backend/deliveries","erp/products/backend/products","erp/products/backend/categories","erp/products/backend/damage_records","erp/products/backend/stock_checks","erp/products/backend/brands","erp/products/backend/brand_groups","erp/products/backend/comments"].include?(params[:controller]) %>">
     <a href="javascript:;" class="nav-link nav-toggle">
         <i class="fa fa-th"></i>
         <span class="title"><%= t('.storage') %></span>
-        <% if ["erp/inventory/backend/delivering","erp/deliveries/backend/deliveries","erp/products/backend/products","erp/products/backend/categories","erp/products/backend/damage_records","erp/products/backend/stock_checks","erp/products/backend/brands","erp/products/backend/brand_groups"].include?(params[:controller]) %>
+        <% if ["erp/inventory/backend/delivering","erp/deliveries/backend/deliveries","erp/products/backend/products","erp/products/backend/categories","erp/products/backend/damage_records","erp/products/backend/stock_checks","erp/products/backend/brands","erp/products/backend/brand_groups","erp/products/backend/comments"].include?(params[:controller]) %>
             <span class="selected"></span>
             <span class="arrow open"></span>
         <% else %>
