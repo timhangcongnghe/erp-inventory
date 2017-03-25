@@ -9,6 +9,8 @@ vi:
           stock_checks: "Kiểm kho"
           brands: "Thương hiệu"
           brand_groups: "Nhóm thương hiệu"
+          comments: "Tất cả bình luận"
+          ratings: "Tất cả đánh giá"
   erp:
     inventory: 
       backend:
