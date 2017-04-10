@@ -20,41 +20,46 @@
     <ul class="sub-menu">
         <% if Erp::Core.available?("online_store") %>
             <% if Erp::Core.available?("products") %>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_products_path %>" class="nav-link">
-                    <span class="title"><%= t('.products') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_categories_path %>" class="nav-link">
-                    <span class="title"><%= t('.categories') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_brands_path %>" class="nav-link">
-                    <span class="title"><%= t('.brands') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_brand_groups_path %>" class="nav-link">
-                    <span class="title"><%= t('.brand_groups') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_accessories_path %>" class="nav-link">
-                    <span class="title"><%= t('.accessories') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_comments_path %>" class="nav-link">
-                    <span class="title"><%= t('.comments') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="title"><%= t('.ratings') %></span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_products_path %>" class="nav-link">
+                        <span class="title"><%= t('.products') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_categories_path %>" class="nav-link">
+                        <span class="title"><%= t('.categories') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_brands_path %>" class="nav-link">
+                        <span class="title"><%= t('.brands') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_brand_groups_path %>" class="nav-link">
+                        <span class="title"><%= t('.brand_groups') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_accessories_path %>" class="nav-link">
+                        <span class="title"><%= t('.accessories') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_comments_path %>" class="nav-link">
+                        <span class="title"><%= t('.comments') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="title"><%= t('.ratings') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.hkerp_products_backend_products_path %>" class="nav-link">
+                        <span class="title">Erp connector</span>
+                    </a>
+                </li>
             <% end %>
         <% else %>
             <li class="nav-item">
@@ -63,38 +68,38 @@
                 </a>
             </li>
             <% if Erp::Core.available?("deliveries") %>
-            <li class="nav-item">
-                <a href="<%= erp_deliveries.backend_deliveries_path %>" class="nav-link">
-                    <span class="title"><%= t('.deliveries') %></span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a href="<%= erp_deliveries.backend_deliveries_path %>" class="nav-link">
+                        <span class="title"><%= t('.deliveries') %></span>
+                    </a>
+                </li>
             <% end %>
             <% if Erp::Core.available?("products") %>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_damage_records_path %>" class="nav-link">
-                    <span class="title"><%= t('.damage_records') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_stock_checks_path %>" class="nav-link">
-                    <span class="title"><%= t('.stock_checks') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_products_path %>" class="nav-link">
-                    <span class="title"><%= t('.products') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_categories_path %>" class="nav-link">
-                    <span class="title"><%= t('.categories') %></span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<%= erp_products.backend_brands_path %>" class="nav-link">
-                    <span class="title"><%= t('.brands') %></span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_damage_records_path %>" class="nav-link">
+                        <span class="title"><%= t('.damage_records') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_stock_checks_path %>" class="nav-link">
+                        <span class="title"><%= t('.stock_checks') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_products_path %>" class="nav-link">
+                        <span class="title"><%= t('.products') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_categories_path %>" class="nav-link">
+                        <span class="title"><%= t('.categories') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_brands_path %>" class="nav-link">
+                        <span class="title"><%= t('.brands') %></span>
+                    </a>
+                </li>
             <% end %>
         <% end %>
     </ul>
