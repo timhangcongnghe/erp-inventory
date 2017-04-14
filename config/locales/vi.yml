@@ -9,6 +9,7 @@ vi:
           stock_checks: "Kiểm kho"
           properties: "Thuộc tính"
           property_groups: "Nhóm thuộc tính"
+          properties_values: "Giá trị thuộc tính"
           brands: "Thương hiệu"
           brand_groups: "Nhóm thương hiệu"
           accessories: "Nhóm phụ kiện"
