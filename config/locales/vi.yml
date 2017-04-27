@@ -15,6 +15,7 @@ vi:
           accessories: "Nhóm phụ kiện"
           comments: "Tất cả bình luận"
           ratings: "Tất cả đánh giá"
+          events: "Chương trình sự kiện"
   erp:
     inventory: 
       backend:

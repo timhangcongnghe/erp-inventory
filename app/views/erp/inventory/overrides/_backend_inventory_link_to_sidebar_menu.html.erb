@@ -3,7 +3,7 @@
                                           "erp/products/backend/damage_records","erp/products/backend/stock_checks",
                                           "erp/products/backend/brands","erp/products/backend/brand_groups",
                                           "erp/products/backend/comments", "erp/products/backend/ratings", "erp/products/backend/accessories",
-                                          "erp/products/backend/property_groups","erp/products/backend/properties"
+                                          "erp/products/backend/property_groups","erp/products/backend/properties","erp/products/backend/events"
                                           ].include?(params[:controller]) %>">
     <a href="javascript:;" class="nav-link nav-toggle">
         <i class="fa fa-th"></i>
@@ -11,7 +11,8 @@
         <% if ["erp/inventory/backend/delivering","erp/deliveries/backend/deliveries","erp/products/backend/products",
                "erp/products/backend/categories","erp/products/backend/damage_records","erp/products/backend/stock_checks",
                "erp/products/backend/brands","erp/products/backend/brand_groups","erp/products/backend/comments", "erp/products/backend/ratings",
-               "erp/products/backend/accessories","erp/products/backend/property_groups","erp/products/backend/properties"].include?(params[:controller]) %>
+               "erp/products/backend/accessories","erp/products/backend/property_groups","erp/products/backend/properties","erp/products/backend/events"
+               ].include?(params[:controller]) %>
             <span class="selected"></span>
             <span class="arrow open"></span>
         <% else %>
@@ -69,6 +70,11 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <span class="title"><%= t('.ratings') %></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<%= erp_products.backend_events_path %>" class="nav-link">
+                        <span class="title"><%= t('.events') %></span>
                     </a>
                 </li>
                 <li class="nav-item">
