@@ -16,6 +16,8 @@ vi:
           comments: "Tất cả bình luận"
           ratings: "Tất cả đánh giá"
           events: "Chương trình sự kiện"
+          order: "Đơn đặt hàng"
+          online_store_orders: "Danh sách đơn hàng"
   erp:
     inventory: 
       backend:
