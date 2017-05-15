@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<%= erp_products.backend_ratings_path %>" class="nav-link">
                         <span class="title"><%= t('.ratings') %></span>
                         <% if Erp::Products::Rating.count_archived > 0 %>
                             <span class="badge badge-info"><%= Erp::Products::Rating.count_archived %></span>
