@@ -18,6 +18,9 @@ vi:
           events: "Chương trình sự kiện"
           order: "Đơn đặt hàng"
           online_store_orders: "Danh sách đơn hàng"
+          inventory_products: "Sản phẩm xả kho"
+          inventory_categories: "Chuyên mục xả kho"
+          product_inventory: "Xả Kho Hàng Tồn"
   erp:
     inventory: 
       backend:
