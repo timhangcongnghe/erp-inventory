@@ -1,5 +1,3 @@
-require_dependency "erp/backend/backend_controller"
-
 module Erp
   module Inventory
      module Backend
@@ -8,7 +6,7 @@ module Erp
         end
         
         def order_listing
-          @orders = Erp::Orders::Order.search(params).paginate(:page => params[:page], :per_page => 3)
+          @orders = Erp::Orders::Order.search(params).paginate(:page => params[:page], :per_page => 20)
           
           render layout: nil
         end
