@@ -60,14 +60,14 @@
                 <% end %>
                 <% if get_columns(params).include?("order_status") %>
                 <td>
-                    <% if order.remain_order_quantity > 0 %>
+                    <% if order.not_delivered_quantity > 0 %>
                     <span class="label bg-green-steel"><%= t('.pending') %></span>
                     <% end %>
-                    <% if order.remain_order_quantity == 0 %>
+                    <% if order.not_delivered_quantity == 0 %>
                     <span class="label bg-blue"><%= t('.delivered') %></span>
                     <% end %>
-                    <% if order.remain_order_quantity < 0 %>
-                    <span class="label bg-red-thunderbird">Lỗi số lượng giao = <%= order.remain_order_quantity %></span>
+                    <% if order.not_delivered_quantity < 0 %>
+                    <span class="label bg-red-thunderbird">Lỗi số lượng giao = <%= order.not_delivered_quantity %></span>
                     <% end %>
                 </td>
                 <% end %>

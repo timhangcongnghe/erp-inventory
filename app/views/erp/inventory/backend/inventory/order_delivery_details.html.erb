@@ -16,8 +16,8 @@
             <td class="text-left"><%= order_detail.product.name %></td>
             <td class="numeric text-right"><%= format_number(order_detail.product.price) %> VNĐ</td>
             <td class="numeric"><%= format_number(order_detail.quantity) %></td>
-            <td class="numeric"><%= format_number(order_detail.delivered_amount) %></td>
-            <td class="numeric"><%= format_number(order_detail.remain_quantity) %></td>
+            <td class="numeric"><%= format_number(order_detail.delivered_quantity) %></td>
+            <td class="numeric"><%= format_number(order_detail.not_delivered_quantity) %></td>
         </tr>
         <% end %>
     </tbody>
